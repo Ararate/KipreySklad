@@ -1,0 +1,900 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KipreySklad</name>
+    </assembly>
+    <members>
+        <member name="M:KipreySklad.Classes.DataBase.Connect">
+            <summary>
+            Соединение с БД
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.Authorization(System.String,System.String)">
+            <summary>
+            Авторизация
+            </summary>
+            <param name="Login"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.Export">
+            <summary>
+            Экспорт БД
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.Import">
+            <summary>
+            Импорт БД
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.Import(System.String)">
+            <summary>
+            Выгрузка таблицы из буфера
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.CoordinatesOf(System.String[0:,0:],System.String)">
+            <summary>
+            Поиск элемента в двумерной матрице
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="matrix"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DataBase.Export(System.String)">
+            <summary>
+            Сохранение таблицы в буфер
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.Combo(System.String)">
+            <summary>
+            Получение таблицы clients для comboBox
+            </summary>
+            <param name="where"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.Get(System.String)">
+            <summary>
+            Получение таблицы clients
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.Add(System.String,System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу clients
+            </summary>
+            <param name="fio"></param>
+            <param name="phone"></param>
+            <param name="passport"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.Delete">
+            <summary>
+            Удаление записи из таблицы clients
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.Edit(System.String,System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице clients
+            </summary>
+            <param name="fio"></param>
+            <param name="phone"></param>
+            <param name="passport"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.InDogovor(System.String)">
+            <summary>
+            Проверяет, существует ли связанная запись
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBClients.AlreadyExists(System.String,System.String)">
+            <summary>
+            Проверяет значение выбранного поля на наличие выбранного значения
+            </summary>
+            <param name="val"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="F:KipreySklad.Classes.DBData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Combo">
+            <summary>
+            Получение списка для вывода в comboBox
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Get(System.String,System.Boolean)">
+            <summary>
+            Получение таблицы dogovori
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Get">
+            <summary>
+            Получение "сырой" таблицы dogovori
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Add(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Добавление записи в таблицу dogovori
+            </summary>
+            <param name="idUser"></param>
+            <param name="idClient"></param>
+            <param name="dataBegin"></param>
+            <param name="dataEnd"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Delete">
+            <summary>
+            Удаление записи из таблицы dogovori
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.Edit(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Редактирование записи в таблице dogovori
+            </summary>
+            <param name="idUser"></param>
+            <param name="idClient"></param>
+            <param name="dataBegin"></param>
+            <param name="dataEnd"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBDogovori.HasStoraging(System.String)">
+            <summary>
+            Проверяет, существует ли связанная запись
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.Combo(System.String,System.String,System.String)">
+            <summary>
+            Получение таблицы places для combobox
+            </summary>
+            <param name="and"></param>
+            <param name="perBegin"></param>
+            <param name="perEnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.Get(System.String)">
+            <summary>
+            Получение таблицы places
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.Add(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу places
+            </summary>
+            <param name="idStorage"></param>
+            <param name="placeX"></param>
+            <param name="placeY"></param>
+            <param name="placeZ"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.Delete">
+            <summary>
+            Удаление записи из таблицы places
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.Edit(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице places
+            </summary>
+            <param name="idStorage"></param>
+            <param name="placeX"></param>
+            <param name="placeY"></param>
+            <param name="placeZ"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBPlaces.IsNowUsed(System.String)">
+            <summary>
+            Проверяет, занято ли сегодня место
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBRoles.Get">
+            <summary>
+            Получение таблицы roles
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStorages.Get(System.String)">
+            <summary>
+            Получение таблицы Users
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStorages.Add(System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу Storages
+            </summary>
+            <param name="codeType"></param>
+            <param name="adress"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStorages.Delete">
+            <summary>
+            Удаление записи из таблицы Storages
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStorages.Edit(System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице storages
+            </summary>
+            <param name="codeType"></param>
+            <param name="adress"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStorages.AlreadyExists(System.String,System.String)">
+            <summary>
+            Проверяет поле на наличие значения
+            </summary>
+            <param name="val"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStoraging.Get(System.String)">
+            <summary>
+            Получение таблицы storaging
+            </summary>
+            <param name="and"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStoraging.Add(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу Storaging
+            </summary>
+            <param name="idDogovor"></param>
+            <param name="idPlace"></param>
+            <param name="cargoX"></param>
+            <param name="cargoY"></param>
+            <param name="cargoZ"></param>
+            <param name="weight"></param>
+            <param name="desc"></param>
+            <param name="perBegin"></param>
+            <param name="perEnd"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStoraging.Delete">
+            <summary>
+            Удаление записи из таблицы Storaging
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStoraging.Edit(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице Storaging
+            </summary>
+            <param name="idDogovor"></param>
+            <param name="idPlace"></param>
+            <param name="cargoX"></param>
+            <param name="cargoY"></param>
+            <param name="cargoZ"></param>
+            <param name="weight"></param>
+            <param name="desc"></param>
+            <param name="perBegin"></param>
+            <param name="perEnd"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBStoraging.Fits(System.String,System.String,System.String,System.String)">
+            <summary>
+            Определяет, вместится ли груз в место на складе 
+            </summary>
+            <param name="cargoY"></param>
+            <param name="cargoZ"></param>
+            <param name="cargoX"></param>
+            <param name="idPlace"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.Combo">
+            <summary>
+            Получение таблицы types для comboBox
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.Get(System.String)">
+            <summary>
+            Получение таблицы types
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.Add(System.String)">
+            <summary>
+            Добавление записи в таблицу types
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.Delete">
+            <summary>
+            Удаление записи из таблицы types
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.Edit(System.String)">
+            <summary>
+            Редактирование записи в таблицу types
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.AlreadyExists(System.String,System.String)">
+            <summary>
+            Проверяет поле на наличие значения
+            </summary>
+            <param name="val"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBTypes.HasStorage(System.String)">
+            <summary>
+            Проверяет, существует ли связанная запись
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.Combo">
+            <summary>
+            Получение таблицы uridclients для comboBox
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.Get(System.String)">
+            <summary>
+            Получение таблицы uridclients
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.Add(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу uridclients
+            </summary>
+            <param name="okpo"></param>
+            <param name="urArdes"></param>
+            <param name="directorFio"></param>
+            <param name="firmPhone"></param>
+            <param name="firmName"></param>
+            <param name="bik"></param>
+            <param name="inn"></param>
+            <param name="bank"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.Delete">
+            <summary>
+            Удаление записи из таблицы uridclients
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.Edit(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице uridclients
+            </summary>
+            <param name="urArdes"></param>
+            <param name="directorFio"></param>
+            <param name="firmPhone"></param>
+            <param name="firmName"></param>
+            <param name="bik"></param>
+            <param name="inn"></param>
+            <param name="bank"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.InDogovor(System.String)">
+            <summary>
+            Проверяет, существует ли связанная запись
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUrClients.AlreadyExists(System.String,System.String)">
+            <summary>
+            Проверяет поле на наличие значения
+            </summary>
+            <param name="val"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KipreySklad.Classes.DBUsers">
+            <summary>
+            Работа с таблицей users
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Combo">
+            <summary>
+            Получение таблицы Users для comboBox
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Get(System.String)">
+            <summary>
+            Получение таблицы Users
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Add(System.String,System.String,System.String,System.String)">
+            <summary>
+            Добавление записи в таблицу users
+            </summary>
+            <param name="codeRole"></param>
+            <param name="fio"></param>
+            <param name="phone"></param>
+            <param name="login"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Delete">
+            <summary>
+            Удаление записи из таблицы users
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.PassReset(System.String)">
+            <summary>
+            Сброс пароля пользователя из таблицы users
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Edit(System.String,System.String,System.String,System.String)">
+            <summary>
+            Редактирование записи в таблице users
+            </summary>
+            <param name="codeRole"></param>
+            <param name="fio"></param>
+            <param name="phone"></param>
+            <param name="login"></param>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.EditPassw(System.String)">
+            <summary>
+            Редактирование пароля пользователя
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.AlreadyExists(System.String,System.String)">
+            <summary>
+            Проверяет выбранное поле на наличие выбранного значения
+            </summary>
+            <param name="val"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.HasDogovor(System.String)">
+            <summary>
+            Проверяет наличие активных договоров у пользователя
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KipreySklad.Classes.DBUsers.Restore">
+            <summary>
+            Возврат пользователя из архива
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddClient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddClient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddClient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddDogovor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddDogovor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddDogovor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddPlace.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddPlace.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddPlace.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddStorage.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddStorage.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddStorage.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddStoraging.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddStoraging.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddStoraging.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddType.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddType.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddType.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddUrClient.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddUrClient.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddUrClient.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.AddUser.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.AddUser.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.AddUser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.Cabinet.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.Cabinet.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.Cabinet.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.ChooseDogovor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.ChooseDogovor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.ChooseDogovor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.DBHistory.Get(System.String)">
+            <summary>
+            Получение таблицы clients
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormClients.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormClients.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormClients.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormDogovori.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormDogovori.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormDogovori.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormHistory.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormHistory.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormHistory.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormPlaces.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormPlaces.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormPlaces.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormStorages.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormStorages.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormStorages.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormStoraging.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormStoraging.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormStoraging.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormTypes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormTypes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormTypes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormUrClients.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormUrClients.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormUrClients.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.FormUsers.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.FormUsers.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.FormUsers.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.Journal.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.Journal.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.Journal.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.Main.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.Main.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.NewPassword.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.NewPassword.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.NewPassword.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Forms.Progress.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Forms.Progress.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KipreySklad.Forms.Progress.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:KipreySklad.Authorization.components">
+            <summary>
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Authorization.Dispose(System.Boolean)">
+            <summary>
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:KipreySklad.Authorization.InitializeComponent">
+            <summary>
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="M:KipreySklad.Program.Main">
+            <summary>
+            Главная точка входа для приложения.
+            </summary>
+        </member>
+        <member name="T:KipreySklad.Properties.Resources">
+            <summary>
+              Класс ресурсов со строгим типом для поиска локализованных строк и пр.
+            </summary>
+        </member>
+        <member name="P:KipreySklad.Properties.Resources.ResourceManager">
+            <summary>
+              Возврат кэшированного экземпляра ResourceManager, используемого этим классом.
+            </summary>
+        </member>
+        <member name="P:KipreySklad.Properties.Resources.Culture">
+            <summary>
+              Переопределяет свойство CurrentUICulture текущего потока для всех
+              подстановки ресурсов с помощью этого класса ресурсов со строгим типом.
+            </summary>
+        </member>
+    </members>
+</doc>
